@@ -9,7 +9,7 @@ $MaximumFunctionCount = 8192
 $ErrorActionPreference = "Stop"
 
 $AppName = "Intune HWID Upload ($MspName)"
-
+$SecretLifetimeDays = 730
 
 # Ensure Graph module
 if (-not (Get-Module -ListAvailable -Name Microsoft.Graph)) {

@@ -8,6 +8,12 @@ $MaximumFunctionCount = 8192
 
 $ErrorActionPreference = "Stop"
 
+# Default OutputDir when running via irm|iex (no script file path)
+if (-not $OutputDir -or [string]::IsNullOrWhiteSpace($OutputDir)) {
+    $OutputDir = Join-Path $env:USERPROFILE "Downloads"
+}
+New-Item -ItemType Directory -Path $OutputDir -Force | Out-Null
+
 $AppName = "Intune HWID Upload ($MspName)"
 $SecretLifetimeDays = 730
 

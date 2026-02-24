@@ -114,11 +114,7 @@ try {
 
 Install-Script -Name Get-WindowsAutoPilotInfo -Force -Scope AllUsers
 
-Get-WindowsAutoPilotInfo `
-    -Online `
-    -TenantId `$TenantID `
-    -AppId `$ApplicationID `
-    -AppSecret `$ApplicationSecret
+Get-WindowsAutoPilotInfo -Online -TenantId $TenantID -AppId $ApplicationID -AppSecret $ApplicationSecret
 
 Write-Host "HWID upload completed successfully." -ForegroundColor Green
 "@

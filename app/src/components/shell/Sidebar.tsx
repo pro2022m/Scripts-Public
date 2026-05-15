@@ -52,15 +52,18 @@ export async function Sidebar() {
                 {section.title}
               </p>
               <div className="space-y-0.5">
-                {items.map((item) => (
-                  <SidebarItem
-                    key={item.href}
-                    href={item.href}
-                    label={item.label}
-                    icon={item.icon}
-                    badge={item.badge}
-                  />
-                ))}
+                {items.map((item) => {
+                  const ItemIcon = item.icon;
+                  return (
+                    <SidebarItem
+                      key={item.href}
+                      href={item.href}
+                      label={item.label}
+                      icon={<ItemIcon className="size-[18px]" />}
+                      badge={item.badge}
+                    />
+                  );
+                })}
               </div>
             </div>
           );
